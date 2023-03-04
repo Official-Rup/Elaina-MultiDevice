@@ -12,8 +12,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 	{title: "🌟 | PremNsfwChat", rowId: `${usedPrefix + command} premnsfwchat`},
 	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
 	{title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
-	{title: "📛 | Antitoxic", rowId: `${usedPrefix + command} antitoxic`},
-	{title: "📞 | Anticall", rowId: `$usedPrefix + command} anticall`}, 
+	{title: "📛 | Antitoxic", rowId: `${usedPrefix + command} antitoxic`}, 
 	{title: "📩 | Antispam", rowId: `$usedPrefix + command} antiSpam`}, 
 	{title: "🖼 | Autosticker", rowId: `${usedPrefix + command} autoSticker`}, 
 	{title: "⏏️ | Autolevelup", rowId: `${usedPrefix + command} autolevelup`},
@@ -117,13 +116,6 @@ const listMessage = {
     //   break
      case 'document':
        chat.useDocument = isEnable
-       break
-       case 'autopresence':
-        if (!isROwner) {
-          global.dfail('rowner', m, conn)
-          throw false
-        }
-      chat.autoPresence = isEnable
       break
     case 'public':
       isAll = true
@@ -143,11 +135,13 @@ const listMessage = {
       chat.antiLink = isEnable
       break
       break
-      case 'autosticker':
-        if (!isROwner) {
-          global.dfail('rowner', m, conn)
+      case 'autoSticker':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
           throw false
         }
+      }
       chat.autoSticker = isEnable
       break
       chat.updateAnimeNews = isEnable
@@ -300,7 +294,7 @@ const listMessage = {
 📊 *Status:* Succes ✅
 🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
 📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}
-`, wm, `${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`, '🎀 Menu', '.menu', fpayment, adReply)
+`, wm, 'ᴏᴘᴛɪᴏɴs ᴛʜɪs ʙᴏᴛ', `${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`, '🎀 Menu', '.menu', fakes, adReply)
 }
 handler.help = ['enable', 'disable'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']

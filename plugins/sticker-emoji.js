@@ -5,13 +5,13 @@ const emoji = new EmojiAPI()
 
 let handler = async (m, { conn, args, usedPrefix, command, isPrems }) => {
   let er = `
- ✳️ Gunakan Perintah
+ 🔗 Gunakan Perintah
 *${usedPrefix + command}* <tipe> <emoji>
 
 📌 Contoh :
 *${usedPrefix + command}* fa 🐼
 
-┌─⊷ *𝚃𝙸𝙿𝙴* 
+┌─⊷ *Type* 
 ▢ wha = whatsapp 
 ▢ ap = apple
 ▢ fa = facebook

@@ -8,7 +8,7 @@ import moment from 'moment-timezone'
 import os from 'os'
 import fs from 'fs'
 import fetch from 'node-fetch'
-const { makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = (await import('@adiwajshing/baileys')).default
+const { generateWAMessageFromContent, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = (await import('@adiwajshing/baileys')).default
 
 const defaultMenu = {
   before: `
@@ -446,81 +446,46 @@ const listMessage = {
   }
   
     let urls = pickRandom(['https://telegra.ph/file/035e524939ab0294ba91f.jpg', 'https://telegra.ph/file/96b2275d3b14d071290bc.jpg', 'https://telegra.ph/file/2c6b7660bc6126404a9bb.jpg', 'https://telegra.ph/file/c635bf577bb9d59a3e00b.jpg', 'https://telegra.ph/file/be8dd52f6363f9e9f5a60.jpg', 'https://telegra.ph/file/02e53361b9dc946f63c8d.jpg', 'https://telegra.ph/file/298ed2f1bba17aeb64ca8.jpg', 'https://telegra.ph/file/be2a18221974147f66ea0.jpg'])
- 
     const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
     
     //FAKE TROLI
 
     const ftrol = {
-
     key : {
-
     remoteJid: 'status@broadcast',
-
     participant : '0@s.whatsapp.net'
-
     },
-
     message: {
-
     orderMessage: {
-
     itemCount : 2022,
-
     status: 1,
-
     surface : 1,
-
     message: `Hai Kak ${name}!`, 
-
     orderTitle: `▮Menu ▸`,
-
     thumbnail: await (await fetch(flaaa + 'Menu')).buffer(), //Gambarnye
-
     sellerJid: '0@s.whatsapp.net' 
-
     }
-
     }
-
     }
     
     const fload = {
-
     key : {
-
     remoteJid: 'status@broadcast',
-
     participant : '0@s.whatsapp.net'
-
     },
-
     message: {
-
     orderMessage: {
-
     itemCount : 2022,
-
     status: 1,
-
     surface : 1,
-
     message: '[❗] Memuat Menu ' + teks + '...\n Sabar Ya Kak ^ω^', 
-
     orderTitle: `▮Menu ▸`,
-
     thumbnail: await (await fetch(flaaa + 'Loading')).buffer(), //Gambarnye
-
     sellerJid: '0@s.whatsapp.net' 
-
     }
-
     }
-
     }
-
     conn.reply(m.chat, '*Tunggu Sebentar Kak. . .*', ftrol) 
-
     
     //------------------< MENU >----------------
     
@@ -546,9 +511,9 @@ const listMessage = {
     let d6 = 'application/zip'
     let td = `${pickRandom([d1,d2,d3,d4,d5,d6])}`
     
-    
+   //~~~Source : https://github.com/Rlxfly
     //------- MENU LOCATION
-    const pre = generateWAMessageFromContent(m.chat, { liveLocationMessage:{
+    /*const pre = generateWAMessageFromContent(m.chat, { liveLocationMessage:{
   degreesLatitude: 34.672314,
   degreesLongitude: 135.484802,
   accuracyInMeters: 100,
@@ -562,7 +527,7 @@ const listMessage = {
 }}, { quoted: m
 					})
 
-//return conn.relayMessage(m.chat, pre.message, { messageId: pre.key.id })
+return conn.relayMessage(m.chat, pre.message, { messageId: pre.key.id })*/
 
 //-------DOC TEMPLATE
     const message = { 
@@ -611,11 +576,11 @@ const listMessage = {
         
         //MAIN MENU
       /*conn.sendButton(m.chat, `*${ucapan()}, ${name} 👋*`, text.trim(), await genProfile(conn, m), [['Speedtest', _p + 'speedtest'], ['Owner', _p + 'owner']], false, { quoted: fkon, contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: "https://Instagram.com/Xiao_yan_21",
+    mediaUrl: global.sig,
     mediaType: "VIDEO",
-    description: "https://Instagram.com/Xiao_yan_21", 
+    description: global.sig, 
     title: wm,
-    body: 'List Menu?',
+    body: 'Here List Menu',
     thumbnail: thumb,
     sourceUrl: sgc
 }
@@ -638,11 +603,20 @@ const listMessage = {
       showAdAttribution: true
       }}}}}}, {})*/
       
-    //------------------- 2BUTTON LOCATION
-    conn.sendButton(m.chat, `${ucapan()}﹗`, text.trim(), `${timeimg()}`, [
+     //---Made By @ImYanXiao
+    // Mampus Di Enc 🧢
+    // Gausah Dihapus, Thx
+    //------------------ BUTTONDOC WITH EXTERNALADS NEW
+    //---Versi 1
+      const _0xcdaec6=_0xfc88;(function(_0x121742,_0x178b98){const _0x38fd3d=_0xfc88,_0x4a08e1=_0x121742();while(!![]){try{const _0x4c2f0e=parseInt(_0x38fd3d(0x184))/0x1*(-parseInt(_0x38fd3d(0x182))/0x2)+parseInt(_0x38fd3d(0x180))/0x3*(parseInt(_0x38fd3d(0x178))/0x4)+-parseInt(_0x38fd3d(0x172))/0x5*(parseInt(_0x38fd3d(0x17d))/0x6)+parseInt(_0x38fd3d(0x175))/0x7+parseInt(_0x38fd3d(0x170))/0x8*(parseInt(_0x38fd3d(0x17f))/0x9)+parseInt(_0x38fd3d(0x183))/0xa*(-parseInt(_0x38fd3d(0x17c))/0xb)+parseInt(_0x38fd3d(0x177))/0xc;if(_0x4c2f0e===_0x178b98)break;else _0x4a08e1['push'](_0x4a08e1['shift']());}catch(_0x5a7895){_0x4a08e1['push'](_0x4a08e1['shift']());}}}(_0x1e1d,0xb6f4f));let buttonMessage={'document':{'url':sgh},'mimetype':global[_0xcdaec6(0x174)],'fileName':wm,'fileLength':fsizedoc,'pageCount':fpagedoc,'contextInfo':{'externalAdReply':{'showAdAttribution':!![],'mediaType':0x1,'previewType':_0xcdaec6(0x17e),'title':global['titlebot'],'thumbnail':fs[_0xcdaec6(0x173)](_0xcdaec6(0x17a)),'renderLargerThumbnail':!![],'sourceUrl':sgh}},'caption':botdate,'footer':text[_0xcdaec6(0x171)](),'buttons':[{'buttonId':_0xcdaec6(0x181),'buttonText':{'displayText':'ᴍᴇɴᴜ'},'type':0x1},{'buttonId':'.donasi','buttonText':{'displayText':_0xcdaec6(0x17b)},'type':0x1},{'buttonId':'.ping','buttonText':{'displayText':_0xcdaec6(0x176)},'type':0x1}],'headerType':0x6};function _0x1e1d(){const _0x440cac=['1DpiOFm','sendMessage','2096CoEGkm','trim','2129165rZblhf','readFileSync','ddocx','3582075TFXWzi','ᴘɪɴɢ','7187508hdCpab','1898140ArSHbI','chat','./thumbnail.jpg','ᴅᴏɴᴀsɪ','192181QRobng','12waBWOl','pdf','30798xkQxmC','9mzUDLL','.menu','1598014Ltrowh','590FrCHEB'];_0x1e1d=function(){return _0x440cac;};return _0x1e1d();}function _0xfc88(_0x2e3128,_0x1e767f){const _0x1e1d41=_0x1e1d();return _0xfc88=function(_0xfc884e,_0x1a1e73){_0xfc884e=_0xfc884e-0x170;let _0x163d50=_0x1e1d41[_0xfc884e];return _0x163d50;},_0xfc88(_0x2e3128,_0x1e767f);}await conn[_0xcdaec6(0x185)](m[_0xcdaec6(0x179)],buttonMessage,{'quoted':fkontak});
+    //---Versi 2
+     //function _0x20c1(_0x3d1dba,_0x1a315e){const _0x1aaa67=_0x1aaa();return _0x20c1=function(_0x20c1f6,_0x54b096){_0x20c1f6=_0x20c1f6-0x1c6;let _0x4ac527=_0x1aaa67[_0x20c1f6];return _0x4ac527;},_0x20c1(_0x3d1dba,_0x1a315e);}const _0x254aec=_0x20c1;(function(_0xc90ae0,_0x2a9661){const _0x18cea6=_0x20c1,_0x2d6908=_0xc90ae0();while(!![]){try{const _0x2ba2f0=-parseInt(_0x18cea6(0x1d8))/0x1+parseInt(_0x18cea6(0x1c6))/0x2*(parseInt(_0x18cea6(0x1d3))/0x3)+-parseInt(_0x18cea6(0x1d7))/0x4*(-parseInt(_0x18cea6(0x1d1))/0x5)+parseInt(_0x18cea6(0x1da))/0x6*(parseInt(_0x18cea6(0x1db))/0x7)+parseInt(_0x18cea6(0x1d5))/0x8*(-parseInt(_0x18cea6(0x1cc))/0x9)+parseInt(_0x18cea6(0x1ca))/0xa*(-parseInt(_0x18cea6(0x1cf))/0xb)+parseInt(_0x18cea6(0x1c9))/0xc;if(_0x2ba2f0===_0x2a9661)break;else _0x2d6908['push'](_0x2d6908['shift']());}catch(_0x1f7d38){_0x2d6908['push'](_0x2d6908['shift']());}}}(_0x1aaa,0xbc66e));function _0x1aaa(){const _0x36844b=['386768jYCpaP','.ping','8723532zYlQfN','7fscaTt','912466cACkPE','readFileSync','AllMenu','5611548ebnrCK','1090xslGJh','Donasi','9ctfOjB','trim','sendMessage','69872JqHKkt','sig','4108735YfQyZP','./thumbnail.jpg','3CgyrmQ','titlebot','10789608ysbGEy','pdf','4fZdsjl'];_0x1aaa=function(){return _0x36844b;};return _0x1aaa();}let buttonMessage={'document':{'url':sgc},'mimetype':global['ddocx'],'fileName':wm,'fileLength':fsizedoc,'pageCount':fpagedoc,'contextInfo':{'externalAdReply':{'showAdAttribution':!![],'mediaUrl':global[_0x254aec(0x1d0)],'mediaType':0x2,'previewType':_0x254aec(0x1d6),'title':global[_0x254aec(0x1d4)],'body':global[_0x254aec(0x1d4)],'thumbnail':fs[_0x254aec(0x1c7)](_0x254aec(0x1d2)),'sourceUrl':snh}},'caption':botdate,'footer':text[_0x254aec(0x1cd)](),'buttons':[{'buttonId':_0x254aec(0x1d9),'buttonText':{'displayText':'Ping'},'type':0x1},{'buttonId':'.?\x20all','buttonText':{'displayText':_0x254aec(0x1c8)},'type':0x1},{'buttonId':'.donasi','buttonText':{'displayText':_0x254aec(0x1cb)},'type':0x1}],'headerType':0x6};await conn[_0x254aec(0x1ce)](m['chat'],buttonMessage,{'quoted':fkontak});
+
+     //------------------- 2BUTTON LOCATION
+    /*conn.sendButton(m.chat, `${ucapan()}﹗`, text.trim(), `${timeimg()}`, [
       ['🎏 ᴍᴇɴᴜ', `${_p}menu`],
       ['⚡ sᴘᴇᴇᴅᴛᴇsᴛ', `${_p}speedtest`]
-    ], m, {asLocation: true})
+    ], m, {asLocation: true}))*/
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e

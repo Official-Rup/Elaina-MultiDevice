@@ -4,6 +4,7 @@
 
 import fs from 'fs'
 import fetch from 'node-fetch'
+import axios from 'axios'
 import moment from 'moment-timezone'
 import knights from 'knights-canvas'
 
@@ -16,45 +17,77 @@ handler.all = async function (m) {
 	} catch (e) {
 	} finally {
 		
-        //global.bg = await (await fetch(img)).buffer()
+                //global.bg = await (await fetch(img)).buffer()
 		global.doc = pickRandom(["application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.presentationml.presentation", "application/msword", "application/pdf", "application/vnd.android.package-archive", "application/zip"])
 		global.pic = hwaifu.getRandom()
 		global.fla = flaaa.getRandom()
+                global.social = pickRandom([global.sgh, global.sig, global.snh, global.sgc]) 
 
 		// Module 
 		global.fetch = import('node-fetch')
 		global.bochil = import('@bochilteam/scraper')
 		
+                // Function
+                global.pickRandom = function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
+
+                global.getBuffer = async function getBuffer(url, options) {
+	try {
+		options ? options : {}
+		var res = await axios({
+			method: "get",
+			url,
+			headers: {
+				'DNT': 1,
+				'User-Agent': 'GoogleBot',
+				'Upgrade-Insecure-Request': 1
+			},
+			...options,
+			responseType: 'arraybuffer'
+		})
+		return res.data
+	} catch (e) {
+		console.log(`Error : ${e}`)
+	}
+}
+
 		const _uptime = process.uptime() * 1000
-        
-		// Ini untuk command crator/owner
-		global.kontak2 = [
-         [owner[0], await conn.getName(owner[0] + '@s.whatsapp.net'), ' ', 'yanxiao021@gmail.com', true],
-         [owner[1], await conn.getName(owner[1] + '@s.whatsapp.net'), ' ', 'yanxiao021@gmail.com', true], // Kalo mau di tambah tinggal copy 1baris ini di tempel di bawahnya trs di edit dikit!
-        ]
         
 		// ucapan ini mah
 		global.ucapan = ucapan()
 		
 		// pesan sementara
 		global.ephemeral = '86400' // 86400 = 24jam, kalo ingin di hilangkan ganti '86400' jadi 'null' atau ''
+         
      		// externalAdReply atau text with thumbnail. gatau bahasa Inggris? coba translate!
 		global.adReply = {
 			contextInfo: {
 				forwardingScore: 9999,
 				//isForwarded: true, // ini biar ada tulisannya diteruskan berkali-kali, jika ingin di hilangkan ganti true menjadi false
 				externalAdReply: { // Bagian ini sesuka kalian berkreasi :'v
-                    showAdAttribution: true,
+                                        showAdAttribution: true,
 					title: global.ucapan,
 					body: wm,
 					mediaUrl: sgc,
-					description: 'Elaina-MultiDevice',
+					description: wm3,
 					previewType: "PHOTO",
 					thumbnail: await (await fetch(pic)).buffer(),
-					sourceUrl: "https://github.com/ImYanXiao",					
+					sourceUrl: "https://github.com/ImYanXiao"			
 				}
 			}
 		}
+                global.flocation = {
+	key : {
+           participant : '0@s.whatsapp.net'
+                        },
+       message: {
+                    locationMessage: {
+                    name: 'Japan`s',
+                    jpegThumbnail: fs.readFileSync('./thumbnail.jpg')
+                          }
+                        }
+                      }
 		global.fpayment = {
 				"key": {
 					"remoteJid": "0@s.whatsapp.net",
@@ -83,10 +116,10 @@ handler.all = async function (m) {
 			}
 		global.fakeig = {
          contextInfo: { externalAdReply: { showAdAttribution: true,
-            mediaUrl: "https://Instagram.com/Xiao_yan_21",
+            mediaUrl: global.sig,
             mediaType: "VIDEO",
-            description: "https://Instagram.com/Xiao_yan_21", 
-            title: 'Elaina-MultiDevice',
+            description: global.sig, 
+            title: wm3,
             body: wm,
             thumbnailUrl: pp,
             sourceUrl: sig
@@ -97,14 +130,14 @@ global.fakefb = {
             mediaUrl: "https://Facebook.com/zuck",
             mediaType: "VIDEO",
             description: "https://www.Facebook.com/zuck", 
-            title: 'Elaina-MultiDevice',
+            title: wm3,
             body: wm,
             thumbnailUrl: pp,
             sourceUrl: sgc
     }
     } }
 		// Fake ðŸ¤¥
-		global.ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 9999999999999999999999999999999999999999999999999999999, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
+		global.ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 2023, status: 1, thumbnail: await conn.resize(await getBuffer(thumb),300,150), surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
 		global.fkontak = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg'), thumbnail: fs.readFileSync('./thumbnail.jpg'),sendEphemeral: true}}}
         global.fvn = {
             key: { 
@@ -141,7 +174,7 @@ global.fakefb = {
             { fromMe: false,
             participant: `0@s.whatsapp.net`, ...(m.chat  ? 
             { remoteJid: "status@broadcast" } : {}) },
-            message: { "liveLocationMessage": { "caption":"by : ImYanXiao","h": `${wm}`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
+            message: { "liveLocationMessage": { "caption":"Made By: " + global.nameown ,"h": `${wm}`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}}
            }
                
                   global.fliveLoc2 = {
@@ -164,8 +197,8 @@ global.fakefb = {
                                "mimetype": "image/jpeg",
                                "jpegThumbnail": fs.readFileSync('./thumbnail.jpg') //Gambarnye
                            },
-                           "title": wm, //Kasih namalu 
-                           "description": "Elaina-MultiDevice", 
+                           "title": wm, //Terserah Di Isi apa
+                           "description": wm3, 
                            "currencyCode": "USD",
                            "priceAmount1000": "20000000",
                            "retailerId": "Ghost",
@@ -210,7 +243,7 @@ global.fakefb = {
 			},
 			message: {
 				imageMessage: {
-					url: logo,
+					url: pic,
 					mimetype: 'image/jpeg',
 					fileLength: fsizedoc,
 					height: 306,
@@ -225,7 +258,7 @@ global.fakefb = {
 				},
 				message: {
 					imageMessage: {
-						url: logo,
+						url: pic,
 						mimetype: 'image/jpeg',
 						fileLength: fsizedoc,
 						height: 306,
@@ -253,9 +286,9 @@ global.fakefb = {
                                }
                               }
                              }
-                            // Random Pick Fake
-                             let pft = [global.fimg, global.fimgv, global.fpayment, global.ftroli, global.fkontak, global.fvn, global.fvid, global.ftextt, global.fliveLoc, global.fliveLoc2, global.ftoko, global.fdocs, global.fgclink, global.fgif]
-			                   // Pick Random
+                                      // Random Pick Fake
+                             let pft = [global.fimg, global.flocation, global.fimgv, global.fpayment, global.ftroli, global.fkontak, global.fvn, global.fvid, global.ftextt, global.fliveLoc, global.fliveLoc2, global.ftoko, global.fdocs, global.fgclink, global.fgif]
+			                   // Get Random
 		                     global.fakes = pft.getRandom()
 		        
 	}
@@ -286,4 +319,4 @@ function ucapan() {
 
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
-}
+		 }

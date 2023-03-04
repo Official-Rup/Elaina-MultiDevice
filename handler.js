@@ -5,6 +5,7 @@ import path, { join } from 'path'
 import { unwatchFile, watchFile } from 'fs'
 import chalk from 'chalk'
 import fs from 'fs'
+import knights from 'knights-canvas'
 import fetch from 'node-fetch'
 
 /**
@@ -298,8 +299,8 @@ export async function handler(chatUpdate) {
                     chat.antiToxic = false
                 if (!('simi' in chat))
                     chat.simi = false
-                if (!('nsfw' in chat))
-                    chat.nsfw = false
+                if (!('autoSticker' in chat))
+                    chat.autoSticker = false
                 if (!('premium' in chat))
                     chat.premium = false
                 if (!('premiumTime' in chat)) 
@@ -323,7 +324,7 @@ export async function handler(chatUpdate) {
                     antiToxic: true,
                     simi: false,
                     expired: 0,
-                    nsfw: false,
+                    autoSticker: false,
                     premium: false,
 	            premiumTime: false,
                     premnsfw: false, 
@@ -683,7 +684,27 @@ export async function participantsUpdate({ id, participants, action }) {
                     } finally {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
                             (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', `${this.getName(user)}`)
-                        let wel = API('males', '/welcome2', {
+                            let wel = await new knights.Welcome2()
+                 .setAvatar(pp)
+                 .setUsername(this.getName(user)) 
+                 .setBg("https://telegra.ph/file/0b814069d86ee9a022da5.jpg")
+                 .setGroupname(groupMetadata.subject) 
+                 .setMember(groupMetadata.participants.length)
+                 .toAttachment()
+                 
+              let lea = await new knights.Goodbye()
+                .setUsername(this.getName(user))
+                .setGuildName(groupMetadata.subject)
+                .setGuildIcon(ppgc)
+                .setMemberCount(groupMetadata.participants.length)
+                .setAvatar(pp)
+                .setBackground("https://telegra.ph/file/0db212539fe8a014017e3.jpg")
+                .toAttachment()
+                            
+                         //this.sendFile(id, action === 'add' ? wel : lea, pp, 'pp.jpg', text, null, false, { mentions: [user] })
+                       await this.sendHydrated(id, global.ucapan, text, action === 'add' ? wel.toBuffer() : lea.toBuffer(), sgc, (action == 'add' ? '💌 WELCOME' : '🐾 BYE'), user.split`@`[0], 'ɴᴜᴍʙᴇʀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ', [
+      [action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'bilek']], null, fkontak, { mentions: [user] })
+                        /*let wel = API('males', '/welcome2', {
                                 profile: pp,
                                 username: await this.getName(user),
                                 background: 'https://telegra.ph/file/0b814069d86ee9a022da5.jpg',
@@ -696,17 +717,17 @@ export async function participantsUpdate({ id, participants, action }) {
                                 background: 'https://telegra.ph/file/0db212539fe8a014017e3.jpg',
                                 groupname: await this.getName(id),
                                 membercount: groupMetadata.participants.length
-                            })
-    conn.sendButtonDoc(id, text, wm, action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'ok', fkontak, { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: "https://instagram.com/Xiao_yan_21",
+                            })*/
+    /*conn.sendButtonDoc(id, text, wm, global.namebot, action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'bilek', fkontak, { contextInfo: { externalAdReply: { showAdAttribution: true,
+    mediaUrl: global.sig,
     mediaType: 2, 
-    description: "https://youtu.be/-TleC8rbDT8", 
-    title: 'Elaina-MultiDevice',
+    description: global.sig, 
+    title: wm3,
     body: wm,
     thumbnail: await(await fetch(action === 'add' ? wel : lea)).buffer(),
     sourceUrl: sig
      }}
-  })
+  })*/
                     }
                 }
             }
@@ -765,7 +786,7 @@ Untuk mematikan fitur ini, ketik
 *.enable delete*
           
 Untuk menghapus pesan yang dikirim oleh Bot, reply pesan dengan perintah
-*.delete*`, author, '🔖 Matikan Fitur', '.on delete', '🎀 Menu', '.menu', msg, adReply)
+*.delete*`, author, 'ᴀɴᴛɪ - ᴅᴇʟᴇᴛᴇ', '🔖 Matikan Fitur', '.on delete', '🎀 Menu', '.menu', msg, adReply)
         this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
         console.error(e)
@@ -785,7 +806,7 @@ global.dfail = (type, m, conn) => {
         unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ ʏᴇᴛ* • ᴋᴇᴛɪᴋ  .daftar ᴜɴᴛᴜᴋ ʙɪsᴀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ғɪᴛᴜʀ ɪɴɪ', 
         restrict: '*ʀᴇsᴛʀɪᴄᴛ* • ʀᴇsᴛʀɪᴄᴛ ʙᴇʟᴜᴍ ᴅɪɴʏᴀʟᴀᴋᴀɴ ᴅɪᴄʜᴀᴛ ɪɴɪ',
     }[type]
-    if (msg) return conn.send2ButtonDoc(m.chat, msg, author, '💌 Creator', '.creator', '🎀 Menu', '.menu', fpayment, adReply)
+    if (msg) return conn.send2ButtonDoc(m.chat, msg, author, 'ᴇʀʀᴏʀ - ᴀᴄᴄᴇss ᴅᴇɴɪᴇᴅ', '💌 Creator', '.creator', '🎀 Menu', '.menu', fakes, adReply)
 }
 
 let file = global.__filename(import.meta.url, true)

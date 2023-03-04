@@ -1,10 +1,12 @@
-
-## CATATAN
-Script ini gratis untuk semua orang, bukan untuk Dijual. Jika dijual neraka menunggumu Brother!!
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 <p align="center">
     <img src="https://telegra.ph/file/37df69a78afb6e010282d.jpg" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
+
+## PENTING
+
+> **Warning**: Jangan Memperjual Belikan Script Ini. 
+
 <h1 align="center">ElainaBOT - MD</h1>
 <p align="center">
   <a href="https://github.com/ImYanXiao"><img src="http://readme-typing-svg.herokuapp.com?color=FFFFFF&center=true&vCenter=true&multiline=false&lines=Elaina+BOT+Multi+Device;Base+ori+by+BochilGaming;Recode+By+YanXiao;Give+star+and+forks+this+Repo+:D;Follow+My+Github" alt="ʘᴗʘ">
@@ -17,60 +19,46 @@ Script ini gratis untuk semua orang, bukan untuk Dijual. Jika dijual neraka menu
 <a href="https://github.com/ImYanXiao"><img title="Author" src="https://img.shields.io/badge/AUTHOR-ImYanXiao-green.svg?style=for-the-badge&logo=github"></a>
 
 ---------
-## ```Connect With Me 📞``` <img src="https://github.com/siegrin/siegrin/blob/main/Assets/Handshake.gif" height="32px">
+
+## ```Contact Me 💌``` 
   <a href="https://wa.me/6285736178354">
     <img align="left" alt="SIEGRIN | Whastapp" width="26px" src="https://github.com/siegrin/siegrin/blob/main/Assets/Whatsapp.svg" />
-  </a> &nbsp;&nbsp;
-  <a href="https://www.instagram.com/Xiao_yan_21">
-    <img align="left" alt="SIEGRIN | Instagram" width="24px" src="https://github.com/siegrin/siegrin/blob/main/Assets/Instagram.svg" />
   </a> &nbsp;&nbsp;
   <a href="mailto:yanxiao021@gmail.com">
     <img align="left" alt="SIEGRIN | Gmail" width="26px" src="https://github.com/siegrin/siegrin/blob/main/Assets/Gmail.svg" />
   </a> &nbsp;&nbsp;
 ---------
 
-## ```Whatsapp``` <a href="https://wa.me/6285736178354"> <img align="left" alt="SIEGRIN | Whastapp" width="26px" src="https://github.com/siegrin/siegrin/blob/main/Assets/Whatsapp.svg" />
 [![BOT WHATSAPP](https://img.shields.io/badge/WhatsApp%20BOT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/6281231079387) 
 ---------
 
 ### a little about this bot
-- ✔️ | **Fast Respon** 
 - ✔️ | **Simple** 
 - ✔️ | **Button Template** 
 - ✔️ | **Multi Device** 
 - ✔️ | **Button Document(Experiment)** 
 ---------
 ### Some of the features include
-- ✔️ | Downloader 
-- ✔️ | Internet 
-- ✔️ | Game Rpg 
+- ✔️ | Menfess
+- ✔️ | AntiCall
+- ✔️ | Game & Rpg Game
 - ✔️ | Nsfw 
 - ✔️ | Sticker 
-- ✔️ | Game 
 - ✔️ | Kerang Ajaib 
 - ✔️ | Quotes
 - ✔️ | Anime 
 - ✔️ | Premium 
 - ✔️ | Tools 
-- ✔️ | Exec 
-- ✔️ | React 
 ---------
 
-## `SETTING` ⚙️
+> Support QrCode.... kayaknya🗿
+  
+## ```USER RAILWAY```
 
-- Owner Number [Here](https://github.com/ImYanXiao/Elaina-MultiDevice/blob/master/config.js#L1)
-- Owner Name [Here](https://github.com/ImYanXiao/Elaina-Multidevice/blob/master/config.js#L1)
-- Bot Name [Here](https://github.com/ImYanXiao/Elaina-Multidevice/blob/master/config.js#L1)
----------
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app)
 
-## ```Heroku Buildpack```
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ImYanXiao/Elaina-MultiDevice)
-
-| BuildPack | LINK |
-|--------|--------|
-| **FFMPEG** |[here](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) |
-| **IMAGEMAGICK** | [here](https://github.com/rocketmobile/heroku-buildpack-imagemagick.git) |
-
+## ```USER REPLIT```
+[![Run on Repl.it](https://repl.it/badge/github/ImYanXiao/Elaina-MultiDevice)](https://repl.it/github/ImYanXiao/Elaina-MultiDevice)
 ## TERMUX USER
 ```bash
 $ pkg upgrade && pkg update
@@ -156,7 +144,7 @@ node .
 ## ```Arguments node . [--options] [<session name>]```
 
 ## `--self`
-* Activate self mode (Ignores other)
+* activate self mode (ignores other)
 
 ## `--pconly`
 * If that chat not from private bot, bot will ignore
@@ -220,13 +208,8 @@ conn.sendButton(m.chat, 'Hello world!', '@BochilGaming', 'https://github.com/Boc
 ### 📮 S&K
 1. Not For Sale
 2. Don't forget give star this repo
-3. Follow Github
-4. Don't use this repository wrong!
-5. If you have problem chat me in owner number
-
----------
-
-### ❗ Note : Untuk apikey kamu bisa beli ke website itu sendiri :D
+3. Don't use this repository wrong!
+4. If you have problem chat me in owner number
 
 ---------
 
@@ -237,11 +220,9 @@ conn.sendButton(m.chat, 'Hello world!', '@BochilGaming', 'https://github.com/Boc
 * [`All Contributors`](https://github.com/ImYanXiao)
 * [`All Creator Bot`](https://github.com/ImYanXiao)
 * [`Adiwajshing`](https://github.com/adiwajshing/Baileys)
-* [`Nurutomo`](https://github.com/nurutomi)
+* [`Nurutomo`](https://github.com/nurutomo)
 * [`BochilGaming`](https://github.com/bochilgaming)
-* [`KannaChann`](https://github.com/kannachann) 
-* [`The.Sad.Boy01`](https://github.com/Kangsad01) 
-* [`Papah-Chan`](https://github.com/FahriAdison) 
+* [`Fokus ID`](https://github.com/Fokusdotid) 
 
 ## ```Recode By ✏️```
 [![ImYanXiao](https://github.com/ImYanXiao.png?size=70)](https://github.com/ImYanXiao)
